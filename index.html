@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MANDA TRENDS</title>
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+</head>
+
+<body>
+  <table id="main-table" cellpadding="0" cellspacing="0" align="center">
+    <tr>
+      <td>
+        <a href="https://www.mandatrends.com.br/" target="_blank" title="banner manda trends">
+          <img src="./src/manda-trends_01.png" class="img" alt="banner manda trends">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://gestaodeclientes.com.br/nrf-2020/" target="_blank" title="noticia top 5 assuntos nrf 2020">
+          <img src="./src/manda-trends_02.png" alt="noticia top 5 assuntos nrf 2020">
+        </a>
+      </td>
+    </tr>
+    <tr id="flex-tr">
+      <td>
+        <a href="https://www.uol.com.br/esporte/ultimas-noticias/reuters/2020/01/28/peticao-para-tornar-bryant-novo-logo-da-nba-se-aproxima-de-2-milhoes-de-assinaturas.htm#:~:text=Peti%C3%A7%C3%A3o%20para%20colocar%20Kobe%20em,quase%202%20milh%C3%B5es%20de%20assinaturas&text=Quase%202%20milh%C3%B5es%20de%20pessoas,Los%20Angeles%20Lakers%20no%20domingo."
+          target="_blank" title="noticia petição kobe bryant para ser a logo da nba">
+          <img src="./src/manda-trends_03.png" id="col-1" alt="noticia petição kobe bryant para ser a logo da nba">
+        </a>
+      </td>
+      <td>
+        <a href="https://revistapegn.globo.com/Banco-de-ideias/Mundo-digital/noticia/2020/06/whatsapp-lanca-funcao-de-pagamentos-no-brasil-saiba-como-funciona.html"
+          target="_blank" title="noticia whatsapp lança função de pagamentos">
+          <img src="./src/manda-trends_04.png" id="col-2" alt="noticia whatsapp lança função de pagamentos">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://mandarin.com.br/" target="_blank" title="banner mandarin">
+          <img src="./src/manda-trends_05.png" alt="banner mandarin">
+        </a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="" title="Copyright Mandarin.">
+          <img src="./src/manda-trends_06.png" alt="copyright mandarin">
+        </a>
+      </td>
+    </tr>
+  </table>
+  <script>
+    let resolution = window.matchMedia("(max-width: 600px)");
+
+    let table = document.getElementById('main-table');
+    if (resolution) table.align = 'start';
+
+    function setAlignTable(resolution) {
+      let col1 = document.getElementById('col-1');
+      let col2 = document.getElementById('col-2');
+      if (resolution.matches) {
+        table.align = 'start';
+        col1.src = "./src/manda-trends_03_responsive.png";
+        col2.src = "./src/manda-trends_04_responsive.png";
+      } else {
+        table.align = 'center';
+        col1.src = "./src/manda-trends_03.png";
+        col2.src = "./src/manda-trends_04.png";
+      }
+    }
+    setAlignTable(resolution);
+    resolution.addListener(setAlignTable);
+  </script>
+</body>
+
+</html>
